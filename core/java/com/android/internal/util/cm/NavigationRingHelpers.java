@@ -46,7 +46,7 @@ public class NavigationRingHelpers {
     private static final String ASSIST_ICON_METADATA_NAME = "com.android.systemui.action_assist_icon";
 
     private static final IntentFilter TORCH_STATE_FILTER =
-            new IntentFilter(TorchConstants.ACTION_STATE_CHANGED);
+            new IntentFilter(TorchConstants.ACTION_TOGGLE_STATE);
 
     private NavigationRingHelpers() {
     }
@@ -210,8 +210,8 @@ public class NavigationRingHelpers {
 
     private static int getTorchDrawableResId(Context context) {
         Intent stateIntent = context.registerReceiver(null, TORCH_STATE_FILTER);
-        boolean active = stateIntent != null
-                && stateIntent.getIntExtra(TorchConstants.EXTRA_CURRENT_STATE, 0) != 0;
+        boolean active = stateIntent; //!= null
+                //&& stateIntent.getIntExtra(TorchConstants.ACTION_TOGGLE_STATE, 0) != 0;
 
         if (active) {
             return com.android.internal.R.drawable.ic_navigation_ring_torch_on;
