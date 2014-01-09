@@ -42,7 +42,7 @@ public class TorchConstants {
     //public static final String ACTION_STATE_CHANGED = APP_PACKAGE_NAME + ".TORCH_STATE_CHANGED";
 
     /**
-     * Extra for {@link ACTION_STATE_CHANGED}:
+     * Extra for {@link ACTION_TOGGLE_STATE}:
      * Current torch state
      * Type: integer (0/1)
      */
